@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cortinas a Medida | Decortinas</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --primary:#3A2A22;
+      --secondary:#C89A3D;
+      --crema:#F6F1EA;
+      --beige:#EFE4D6;
+      --text:#1F1B18;
+      --white:#fff;
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
+    body{
+      font-family:'Montserrat',sans-serif;
+      color:var(--text);
+      background:#fff;
+      line-height:1.6;
+      padding-top:92px;
+    }
+
+    h1,h2,h3{font-family:'Playfair Display',serif}
+    .container{width:90%;max-width:1200px;margin:auto}
+
+    nav{
+      position:fixed;
+      top:0;
+      width:100%;
+      z-index:1000;
+      background:var(--primary);
+      box-shadow:0 2px 10px rgba(0,0,0,.2);
+    }
+
+    .nav-content{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      padding:12px 0;
+    }
+
+    .logo img{height:58px;display:block}
+    .menu{list-style:none;display:flex;gap:24px}
+    .menu a{
+      color:#fff;
+      text-decoration:none;
+      font-weight:500;
+      font-size:.95rem;
+    }
+    .menu a:hover{color:var(--secondary)}
+
+    .menu-toggle{
+      display:none;
+      border:none;
+      background:none;
+      color:#fff;
+      font-size:1.6rem;
+      cursor:pointer;
+    }
+
+    header{
+      background:
+        linear-gradient(rgba(26,18,12,.58),rgba(26,18,12,.58)),
+        url("img/cortinas.jpg");
+      background-size:cover;
+      background-position:center;
+      color:#fff;
+      text-align:center;
+      padding:120px 20px 95px;
+    }
+
+    header h1{font-size:3rem;margin-bottom:8px}
+    header p{font-size:1.1rem;opacity:.95}
+
+    .hero-btn{
+      display:inline-block;
+      margin-top:24px;
+      padding:12px 24px;
+      background:var(--secondary);
+      color:#fff;
+      border-radius:30px;
+      text-decoration:none;
+      font-weight:600;
+    }
+
+    .hero-btn:hover{background:#b88935}
+
+    section{padding:75px 0}
+    .section-title{text-align:center;margin-bottom:36px}
+    .section-title h2{font-size:2.1rem;color:var(--primary);margin-bottom:10px}
+    .section-title p{max-width:760px;margin:auto;color:#5c5550}
+
+    .intro-block{background:var(--crema)}
+    .intro{
+      max-width:850px;
+      margin:auto;
+      text-align:center;
+    }
+
+    .stats{
+      margin-top:30px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      gap:14px;
+    }
+
+    .stat{
+      background:#fff;
+      border:1px solid #eadfce;
+      border-radius:10px;
+      padding:16px;
+      text-align:center;
+    }
+
+    .stat strong{
+      display:block;
+      font-size:1.5rem;
+      color:var(--primary);
+      margin-bottom:4px;
+    }
+
+    .destacados{
+      background:#fff;
+    }
+
+    .featured-gallery{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:22px;
+    }
+
+    .featured-item{
+      position:relative;
+      border-radius:14px;
+      overflow:hidden;
+      box-shadow:0 8px 20px rgba(0,0,0,.16);
+    }
+
+    .featured-item img{
+      width:100%;
+      height:420px;
+      object-fit:cover;
+      display:block;
+      transition:.4s;
+    }
+
+    .featured-item:hover img{transform:scale(1.05)}
+
+    .featured-text{
+      position:absolute;
+      left:18px;
+      bottom:18px;
+      right:18px;
+      background:rgba(58,42,34,.82);
+      color:#fff;
+      padding:14px;
+      border-radius:8px;
+    }
+
+    .featured-text h3{font-size:1.2rem;margin-bottom:4px}
+
+    .proceso{
+      background:var(--beige);
+    }
+
+    .steps{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:14px;
+    }
+
+    .step{
+      background:#fff;
+      border-radius:10px;
+      padding:18px;
+      border:1px solid #e6d9c8;
+    }
+
+    .step .icon{font-size:1.4rem;margin-bottom:6px}
+    .step h3{font-size:1.1rem;color:var(--primary);margin-bottom:6px}
+
+    .galeria-section{
+      background:#f9f7f3;
+    }
+
+    .chips{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-bottom:18px;
+    }
+
+    .chip{
+      background:#fff;
+      border:1px solid #e3d8c8;
+      border-radius:30px;
+      padding:6px 12px;
+      font-size:.85rem;
+      color:#534b45;
+    }
+
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:14px;
+    }
+
+    .gallery-item{
+      position:relative;
+      border-radius:10px;
+      overflow:hidden;
+      cursor:pointer;
+      box-shadow:0 6px 14px rgba(0,0,0,.12);
+    }
+
+    .gallery-item img{
+      width:100%;
+      height:240px;
+      object-fit:cover;
+      display:block;
+      transition:.3s;
+    }
+
+    .gallery-item:hover img{transform:scale(1.04)}
+
+    .gallery-label{
+      position:absolute;
+      bottom:10px;
+      left:10px;
+      background:rgba(58,42,34,.84);
+      color:#fff;
+      font-size:.82rem;
+      padding:5px 10px;
+      border-radius:20px;
+    }
+
+    .cta{
+      background:var(--crema);
+      text-align:center;
+      border-top:1px solid #eadfce;
+      border-bottom:1px solid #eadfce;
+    }
+
+    .cta h2{color:var(--primary);margin-bottom:8px}
+    .cta p{color:#5a544d;margin-bottom:16px}
+
+    .back{
+      display:inline-block;
+      margin-top:12px;
+      background:var(--primary);
+      color:#fff;
+      text-decoration:none;
+      padding:11px 20px;
+      border-radius:8px;
+      font-weight:600;
+    }
+
+    .back:hover{background:#2c1f19}
+
+    footer{
+      background:var(--primary);
+      color:#fff;
+      text-align:center;
+      padding:20px 12px;
+      font-size:.92rem;
+    }
+
+    .lightbox{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.85);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      z-index:2000;
+      padding:20px;
+    }
+
+    .lightbox img{
+      max-width:95%;
+      max-height:90vh;
+      border-radius:8px;
+      box-shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+
+    .lightbox.open{display:flex}
+
+    @media (max-width:900px){
+      .featured-gallery{grid-template-columns:1fr}
+      .featured-item img{height:320px}
+    }
+
+    @media (max-width:760px){
+      .menu-toggle{display:block}
+      .menu{
+        display:none;
+        position:absolute;
+        right:5%;
+        top:82px;
+        flex-direction:column;
+        background:var(--primary);
+        padding:14px;
+        border-radius:10px;
+        width:220px;
+      }
+      .menu.open{display:flex}
+      .nav-content{position:relative}
+      header h1{font-size:2.2rem}
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="container nav-content">
+      <a class="logo" href="index.html">
+        <img src="img/logoree.png" alt="Decortinas">
+      </a>
+
+      <button class="menu-toggle" id="menuToggle">☰</button>
+
+      <ul class="menu" id="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="index.html#servicios">Servicios</a></li>
+        <li><a href="index.html#nosotros">Nosotros</a></li>
+        <li><a href="index.html#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Cortinas a Medida</h1>
+    <p>Trabajos reales con acabados elegantes y personalizados</p>
+    <a href="#galeria" class="hero-btn">Ver trabajos</a>
+  </header>
+
+  <section class="intro-block">
+    <div class="container">
+      <div class="section-title">
+        <h2>Diseños que transforman espacios</h2>
+        <p>Cada cortina se confecciona pensando en tu estilo, luz y distribución del hogar.</p>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><strong>+10</strong>Años de experiencia</div>
+        <div class="stat"><strong>+250</strong>Proyectos realizados</div>
+        <div class="stat"><strong>100%</strong>Instalación personalizada</div>
+        <div class="stat"><strong>4.6/5</strong>Valoración clientes</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="destacados">
+    <div class="container">
+      <div class="section-title">
+        <h2>Trabajos destacados</h2>
+        <p>Ejemplos reales para que veas el resultado final en distintos ambientes.</p>
+      </div>
+
+      <div class="featured-gallery">
+        <div class="featured-item">
+          <img src="fotos de cortinas/foto14.jpeg" alt="Cortina elegante salón">
+          <div class="featured-text">
+            <h3>Cortinas elegantes</h3>
+            <p>Acabados finos para salones modernos y clásicos.</p>
+          </div>
+        </div>
+
+        <div class="featured-item">
+          <img src="fotos de cortinas/foto10.jpeg" alt="Cortina ambiente cálido">
+          <div class="featured-text">
+            <h3>Ambientes cálidos</h3>
+            <p>Tejidos que aportan confort y personalidad.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proceso">
+    <div class="container">
+      <div class="section-title">
+        <h2>Cómo trabajamos</h2>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="icon">1️⃣</div>
+          <h3>Asesoría</h3>
+          <p>Te ayudamos a elegir tejido, color y caída según tu espacio.</p>
+        </div>
+        <div class="step">
+          <div class="icon">2️⃣</div>
+          <h3>Medición</h3>
+          <p>Tomamos medidas para que la confección quede perfecta.</p>
+        </div>
+        <div class="step">
+          <div class="icon">3️⃣</div>
+          <h3>Instalación</h3>
+          <p>Montaje profesional para un resultado limpio y duradero.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="galeria" class="galeria-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Galería de trabajos realizados</h2>
+        <p>Haz clic en cualquier foto para verla en grande.</p>
+      </div>
+
+      <div class="chips">
+        <span class="chip">Salón</span>
+        <span class="chip">Dormitorio</span>
+        <span class="chip">Estores</span>
+        <span class="chip">Cortinas decorativas</span>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="fotos de cortinas/foto3.jpg" alt="Trabajo 1"><span class="gallery-label">Salón</span></div>
+        <div class="gallery-item"><img src="fotos de cortinas/foto11.jpeg" alt="Trabajo 2"><span class="gallery-label">Estor</span></div>
+        <div class="gallery-item"><img src="fotos de cortinas/foto9.jpeg" alt="Trabajo 3"><span class="gallery-label">Dormitorio</span></div>
+        <div class="gallery-item"><img src="fotos de cortinas/foto5.jpeg" alt="Trabajo 4"><span class="gallery-label">Visillo</span></div>
+        <div class="gallery-item"><img src="fotos de cortinas/foto13.jpeg" alt="Trabajo 5"><span class="gallery-label">Decoración</span></div>
+        <div class="gallery-item"><img src="fotos de cortinas/foto15.jpeg" alt="Trabajo 6"><span class="gallery-label">Confección</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2>¿Te gustaría algo parecido en tu casa?</h2>
+      <p>Cuéntanos tu idea y te proponemos una opción a medida.</p>
+      <a href="index.html#contacto" class="hero-btn">Pedir presupuesto</a>
+      <br>
+      <a href="index.html" class="back">← Volver al inicio</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Decortinas. Todos los derechos reservados.
+  </footer>
+
+  <div class="lightbox" id="lightbox">
+    <img src="" alt="Imagen ampliada" id="lightboxImg">
+  </div>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const menu = document.getElementById("menu");
+
+    menuToggle.addEventListener("click", function () {
+      menu.classList.toggle("open");
+      menuToggle.textContent = menu.classList.contains("open") ? "✕" : "☰";
+    });
+
+    const items = document.querySelectorAll(".gallery-item img, .featured-item img");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightboxImg");
+
+    items.forEach(function(img){
+      img.addEventListener("click", function(){
+        lightboxImg.src = this.src;
+        lightbox.classList.add("open");
+      });
+    });
+
+    lightbox.addEventListener("click", function(){
+      lightbox.classList.remove("open");
+      lightboxImg.src = "";
+    });
+  </script>
+</body>
+</html>

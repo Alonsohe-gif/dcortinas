@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cortinas a Medida | Decortinas</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --primary:#2f3e46;
+  --secondary:#84a98c;
+}
+
+body {
+  font-family:'Poppins',sans-serif;
+  margin:0;
+}
+
+header {
+  background:
+    linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+    url("images/cortina1.jpg");
+  background-size:cover;
+  color:white;
+  text-align:center;
+  padding:120px 20px;
+}
+
+header h1,
+header p {
+  animation: fadeUp 1.2s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.container {
+  max-width:1100px;
+  margin:auto;
+  padding:80px 20px;
+}
+
+.gallery {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:30px;
+}
+
+.gallery img {
+  width:100%;
+  height:380px;
+  object-fit:cover;
+  border-radius:10px;
+}
+
+.back {
+  display:inline-block;
+  margin-top:50px;
+  background:var(--secondary);
+  color:white;
+  padding:12px 24px;
+  text-decoration:none;
+  border-radius:6px;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  background-color: #3a2a22;
+  padding: 15px 40px;
+  display: flex;
+  align-items: center;
+}
+
+
+.logo img {
+  height: 65px;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+  margin: 0 auto; /* 👈 esto centra el menú */
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.menu a:hover {
+  color: #d9a441; /* dorado */
+}
+
+body {
+  padding-top: 100px; /* espacio para nav fijo */
+}
+
+</style>
+</head>
+
+<body>
+<nav>
+  <div class="logo">
+    <img src="img/logoree.png" alt="Decortinas">
+  </div>
+
+  <ul class="menu">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="index.html#productos">Productos</a></li>
+    <li><a href="index.html#servicios">Servicios</a></li>
+    <li><a href="index.html#nosotros">Nosotros</a></li>
+    <li><a href="index.html#contacto">Contacto</a></li>
+  </ul>
+</nav>
+<header>
+  <h1>Cortinas a Medida</h1>
+  <p>Elegancia y personalización</p>
+</header>
+
+<div class="container">
+  <div class="gallery">
+    <img src="fotos de cortinas/foto2.jpg">
+    <img src="fotos de cortinas/foto2.jpg">
+    <img src="fotos de cortinas/foto2.jpg">
+    <img src="fotos de cortinas/foto2.jpg">
+    <img src="fotos de cortinas/foto2.jpg">
+    <img src="fotos de cortinas/foto2.jpg">
+    <img src="fotos de cortinas/foto2.jpg">
+    <img src="fotos de cortinas/foto2.jpg">
+  </div>
+
+  <a href="index.html" class="back">← Volver al inicio</a>
+</div>
+
+</body>
+</html>

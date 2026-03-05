@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ropa de Cama | Decortinas</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --primary:#3A2A22;
+      --secondary:#C89A3D;
+      --crema:#F6F1EA;
+      --beige:#EFE4D6;
+      --arena:#E5D3BB;
+      --text:#1F1B18;
+      --white:#fff;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Montserrat',sans-serif;
+      color:var(--text);
+      background:var(--white);
+      line-height:1.6;
+      padding-top:92px;
+    }
+
+    h1,h2,h3{
+      font-family:'Playfair Display',serif;
+    }
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    section{
+      padding:70px 0;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:34px;
+    }
+
+    .section-title h2{
+      font-size:2rem;
+      color:var(--primary);
+      margin-bottom:8px;
+    }
+
+    .section-title p{
+      color:#5e5650;
+      max-width:760px;
+      margin:auto;
+    }
+
+    nav{
+      position:fixed;
+      top:0;
+      width:100%;
+      z-index:1000;
+      background:var(--primary);
+      box-shadow:0 2px 10px rgba(0,0,0,.18);
+    }
+
+    .nav-content{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      padding:12px 0;
+    }
+
+    .logo img{
+      height:58px;
+      display:block;
+    }
+
+    .menu{
+      list-style:none;
+      display:flex;
+      gap:22px;
+    }
+
+    .menu a{
+      color:#fff;
+      text-decoration:none;
+      font-weight:500;
+      font-size:.95rem;
+    }
+
+    .menu a:hover{
+      color:var(--secondary);
+    }
+
+    .menu-toggle{
+      display:none;
+      border:none;
+      background:none;
+      color:#fff;
+      font-size:1.6rem;
+      cursor:pointer;
+    }
+
+    header{
+      background:
+        linear-gradient(rgba(26,18,12,.52),rgba(26,18,12,.52)),
+        url("fotos de cortinas/ropadecama3.png");
+      background-size:cover;
+      background-position:center;
+      color:#fff;
+      text-align:center;
+      padding:120px 20px 95px;
+    }
+
+    header h1{
+      font-size:3rem;
+      margin-bottom:8px;
+    }
+
+    header p{
+      font-size:1.1rem;
+      max-width:650px;
+      margin:auto;
+    }
+
+    .hero-btn{
+      display:inline-block;
+      margin-top:24px;
+      padding:11px 24px;
+      background:var(--secondary);
+      color:#fff;
+      text-decoration:none;
+      border-radius:28px;
+      font-weight:600;
+    }
+
+    .hero-btn:hover{
+      background:#b88935;
+    }
+
+    .colecciones{
+      background:var(--crema);
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:16px;
+    }
+
+    .card{
+      background:#fff;
+      border-radius:10px;
+      overflow:hidden;
+      box-shadow:0 6px 16px rgba(0,0,0,.12);
+    }
+
+    .card img{
+      width:100%;
+      height:230px;
+      object-fit:cover;
+      display:block;
+      cursor:zoom-in;
+    }
+
+    .card .info{
+      padding:14px;
+    }
+
+    .card h3{
+      font-size:1.15rem;
+      color:var(--primary);
+      margin-bottom:5px;
+    }
+
+    .card p{
+      font-size:.95rem;
+      color:#5d5650;
+    }
+
+    .inspiracion{
+      background:var(--white);
+    }
+
+    .inspo-grid{
+      display:grid;
+      grid-template-columns:1.15fr 1fr;
+      gap:18px;
+      align-items:stretch;
+    }
+
+    .inspo-main{
+      border-radius:12px;
+      overflow:hidden;
+      position:relative;
+      box-shadow:0 8px 18px rgba(0,0,0,.14);
+    }
+
+    .inspo-main img{
+      width:100%;
+      height:100%;
+      min-height:380px;
+      object-fit:cover;
+      display:block;
+      cursor:zoom-in;
+    }
+
+    .inspo-text{
+      position:absolute;
+      left:14px;
+      right:14px;
+      bottom:14px;
+      background:rgba(58,42,34,.84);
+      color:#fff;
+      padding:12px;
+      border-radius:8px;
+    }
+
+    .tips{
+      background:var(--beige);
+      border-radius:12px;
+      padding:18px;
+    }
+
+    .tips h3{
+      color:var(--primary);
+      margin-bottom:10px;
+    }
+
+    .tips ul{
+      padding-left:18px;
+    }
+
+    .tips li{
+      margin-bottom:8px;
+    }
+
+    .galeria{
+      background:#f8f6f2;
+    }
+
+    .galeria-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:12px;
+    }
+
+    .galeria-item{
+      border-radius:10px;
+      overflow:hidden;
+      position:relative;
+      box-shadow:0 5px 12px rgba(0,0,0,.12);
+    }
+
+    .galeria-item img{
+      width:100%;
+      height:230px;
+      object-fit:cover;
+      display:block;
+      transition:.3s;
+      cursor:zoom-in;
+    }
+
+    .galeria-item:hover img{
+      transform:scale(1.04);
+    }
+
+    .tag{
+      position:absolute;
+      left:10px;
+      bottom:10px;
+      background:rgba(58,42,34,.85);
+      color:#fff;
+      font-size:.82rem;
+      padding:5px 9px;
+      border-radius:20px;
+    }
+
+    .cinta{
+      background:var(--primary);
+      padding:24px 0;
+    }
+
+    .cinta-scroll{
+      display:flex;
+      gap:12px;
+      overflow-x:auto;
+      scroll-snap-type:x mandatory;
+      padding-bottom:4px;
+    }
+
+    .cinta-scroll img{
+      height:170px;
+      border-radius:8px;
+      scroll-snap-align:start;
+      flex-shrink:0;
+      cursor:zoom-in;
+    }
+
+    .cta{
+      background:var(--arena);
+      text-align:center;
+      padding:48px 20px;
+    }
+
+    .cta h2{
+      color:var(--primary);
+      margin-bottom:8px;
+    }
+
+    .cta p{
+      color:#5a524c;
+      margin-bottom:14px;
+    }
+
+    .back{
+      display:inline-block;
+      margin-top:8px;
+      background:var(--primary);
+      color:#fff;
+      text-decoration:none;
+      padding:10px 18px;
+      border-radius:8px;
+      font-weight:600;
+    }
+
+    .back:hover{
+      background:#2c1f19;
+    }
+
+    footer{
+      background:var(--primary);
+      color:#fff;
+      text-align:center;
+      padding:18px 12px;
+      font-size:.92rem;
+    }
+
+    /* LIGHTBOX SIMPLE */
+    .lightbox{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.88);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      z-index:3000;
+      padding:20px;
+    }
+
+    .lightbox.open{
+      display:flex;
+    }
+
+    .lightbox img{
+      max-width:95%;
+      max-height:90vh;
+      border-radius:10px;
+      box-shadow:0 10px 30px rgba(0,0,0,.35);
+      background:#fff;
+    }
+
+    .lightbox-close{
+      position:absolute;
+      top:18px;
+      right:22px;
+      color:#fff;
+      font-size:2rem;
+      cursor:pointer;
+      font-weight:700;
+    }
+
+    @media (max-width:900px){
+      .inspo-grid{
+        grid-template-columns:1fr;
+      }
+      .inspo-main img{
+        min-height:300px;
+      }
+    }
+
+    @media (max-width:760px){
+      .menu-toggle{
+        display:block;
+      }
+
+      .menu{
+        display:none;
+        position:absolute;
+        right:5%;
+        top:82px;
+        width:220px;
+        flex-direction:column;
+        background:var(--primary);
+        padding:14px;
+        border-radius:10px;
+      }
+
+      .menu.open{
+        display:flex;
+      }
+
+      .nav-content{
+        position:relative;
+      }
+
+      header h1{
+        font-size:2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="container nav-content">
+      <a class="logo" href="index.html">
+        <img src="img/logoree.png" alt="Decortinas">
+      </a>
+
+      <button class="menu-toggle" id="menuToggle">☰</button>
+
+      <ul class="menu" id="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="index.html#servicios">Servicios</a></li>
+        <li><a href="index.html#nosotros">Nosotros</a></li>
+        <li><a href="index.html#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Ropa de Cama</h1>
+    <p>Textiles que aportan confort, estilo y calidez a tu dormitorio.</p>
+    <a class="hero-btn" href="#galeria">Ver colección</a>
+  </header>
+
+  <section class="colecciones">
+    <div class="container">
+      <div class="section-title">
+        <h2>Colecciones destacadas</h2>
+        <p>Combina colores, texturas y acabados para crear un dormitorio más acogedor.</p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <img src="fotos de cortinas/ropadecama1.png" alt="Ropa de cama elegante">
+          <div class="info">
+            <h3>Estilo elegante</h3>
+            <p>Diseños suaves para dormitorios modernos y luminosos.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="fotos de cortinas/ropadecama2.png" alt="Ropa de cama cálida">
+          <div class="info">
+            <h3>Ambiente cálido</h3>
+            <p>Combinaciones que transmiten calma y comodidad.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="fotos de cortinas/ropadecama4.png" alt="Textiles decorativos">
+          <div class="info">
+            <h3>Acabado decorativo</h3>
+            <p>Detalles textiles que elevan la estética del cuarto.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="inspiracion">
+    <div class="container">
+      <div class="inspo-grid">
+        <div class="inspo-main">
+          <img src="fotos de cortinas/ropadecama3.png" alt="Inspiración dormitorio">
+          <div class="inspo-text">
+            <h3>Dormitorios con personalidad</h3>
+            <p>Ideas reales para inspirarte antes de elegir tu ropa de cama.</p>
+          </div>
+        </div>
+
+        <div class="tips">
+          <h3>Qué puedes combinar</h3>
+          <ul>
+            <li>Colcha + cojines en tonos neutros.</li>
+            <li>Texturas suaves para más confort visual.</li>
+            <li>Capas ligeras para verano/invierno.</li>
+            <li>Detalles decorativos que unan todo el espacio.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="galeria" class="galeria">
+    <div class="container">
+      <div class="section-title">
+        <h2>Trabajos realizados</h2>
+        <p>Algunos ejemplos de ropa de cama y composición de dormitorio.</p>
+      </div>
+
+      <div class="galeria-grid">
+        <div class="galeria-item">
+          <img src="fotos de cortinas/ropadecama1.png" alt="Trabajo ropa de cama 1">
+          <span class="tag">Dormitorio 1</span>
+        </div>
+        <div class="galeria-item">
+          <img src="fotos de cortinas/ropadecama2.png" alt="Trabajo ropa de cama 2">
+          <span class="tag">Dormitorio 2</span>
+        </div>
+        <div class="galeria-item">
+          <img src="fotos de cortinas/ropadecama3.png" alt="Trabajo ropa de cama 3">
+          <span class="tag">Dormitorio 3</span>
+        </div>
+        <div class="galeria-item">
+          <img src="fotos de cortinas/ropadecama4.png" alt="Trabajo ropa de cama 4">
+          <span class="tag">Dormitorio 4</span>
+        </div>
+        <div class="galeria-item">
+          <img src="fotos de cortinas/foto13.jpeg" alt="Detalle textil">
+          <span class="tag">Detalle</span>
+        </div>
+        <div class="galeria-item">
+          <img src="fotos de cortinas/foto15.jpeg" alt="Composición final">
+          <span class="tag">Composición</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cinta">
+    <div class="container">
+      <div class="cinta-scroll">
+        <img src="fotos de cortinas/ropadecama1.png" alt="Ropa de cama mini 1">
+        <img src="fotos de cortinas/ropadecama2.png" alt="Ropa de cama mini 2">
+        <img src="fotos de cortinas/ropadecama3.png" alt="Ropa de cama mini 3">
+        <img src="fotos de cortinas/ropadecama4.png" alt="Ropa de cama mini 4">
+        <img src="fotos de cortinas/foto9.jpeg" alt="Ropa de cama mini 5">
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2>¿Te ayudamos a vestir tu dormitorio?</h2>
+      <p>Te asesoramos para elegir una combinación bonita y funcional.</p>
+      <a class="hero-btn" href="index.html#contacto">Pedir asesoría</a>
+      <br>
+      <a class="back" href="index.html">← Volver al inicio</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Decortinas. Todos los derechos reservados.
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" id="lightboxClose">×</span>
+    <img src="" alt="Imagen ampliada" id="lightboxImg">
+  </div>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const menu = document.getElementById("menu");
+
+    menuToggle.addEventListener("click", function () {
+      menu.classList.toggle("open");
+      menuToggle.textContent = menu.classList.contains("open") ? "✕" : "☰";
+    });
+
+    // Lightbox
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightboxImg");
+    const lightboxClose = document.getElementById("lightboxClose");
+
+    const imagenes = document.querySelectorAll(
+      ".card img, .inspo-main img, .galeria-item img, .cinta-scroll img"
+    );
+
+    imagenes.forEach(function(img){
+      img.addEventListener("click", function(){
+        lightboxImg.src = this.src;
+        lightbox.classList.add("open");
+      });
+    });
+
+    lightboxClose.addEventListener("click", function(){
+      lightbox.classList.remove("open");
+      lightboxImg.src = "";
+    });
+
+    lightbox.addEventListener("click", function(e){
+      if(e.target === lightbox){
+        lightbox.classList.remove("open");
+        lightboxImg.src = "";
+      }
+    });
+  </script>
+</body>
+</html>

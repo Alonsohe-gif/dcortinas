@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cortinas a Medida | Decortinas</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --primary:#2f3e46;
+  --secondary:#84a98c;
+}
+
+body {
+  font-family:'Poppins',sans-serif;
+  margin:0;
+}
+
+header {
+  background:
+    linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+    url("images/cortina1.jpg");
+  background-size:cover;
+  color:white;
+  text-align:center;
+  padding:120px 20px;
+}
+
+header h1,
+header p {
+  animation: fadeUp 1.2s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.container {
+  max-width:1100px;
+  margin:auto;
+  padding:80px 20px;
+}
+
+.gallery {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:30px;
+}
+
+.gallery img {
+  width:100%;
+  height:380px;
+  object-fit:cover;
+  border-radius:10px;
+}
+
+.gallery img {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+
+.back {
+  display:inline-block;
+  margin-top:50px;
+  background:var(--secondary);
+  color:white;
+  padding:12px 24px;
+  text-decoration:none;
+  border-radius:6px;
+}
+
+#lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+}
+.intro-text {
+  max-width: 700px;
+  margin: -40px auto 60px;
+  text-align: center;
+  font-size: 1.05rem;
+  color: #555;
+}
+#lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  animation: fadeIn 0.4s ease;
+}
+
+#lightbox img {
+  max-width: 88%;
+  max-height: 88%;
+  border-radius: 14px;
+  animation: zoomIn 0.4s ease;
+}
+
+#lightbox .close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 2.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.85); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  background-color: #3a2a22;
+  padding: 15px 40px;
+  display: flex;
+  align-items: center;
+}
+
+
+.logo img {
+  height: 65px;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+  margin: 0 auto; /* 👈 esto centra el menú */
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.menu a:hover {
+  color: #d9a441; /* dorado */
+}
+
+body {
+  padding-top: 100px; /* espacio para nav fijo */
+}
+
+</style>
+</head>
+
+<div id="lightbox">
+  <img src="">
+</div>
+
+<script>
+  const images = document.querySelectorAll('.gallery img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = lightbox.querySelector('img');
+  const closeBtn = document.querySelector('.close');
+
+  images.forEach(img => {
+    img.addEventListener('click', () => {
+      lightbox.style.display = 'flex';
+      lightboxImg.src = img.src;
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+  });
+
+  lightbox.addEventListener('click', e => {
+    if (e.target === lightbox) {
+      lightbox.style.display = 'none';
+    }
+  });
+</script>
+
+
+<div id="lightbox">
+  <span class="close">×</span>
+  <img src="">
+</div>
+
+<body>
+<nav>
+  <div class="logo">
+    <img src="img/logoree.png" alt="Decortinas">
+  </div>
+
+  <ul class="menu">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="index.html#productos">Productos</a></li>
+    <li><a href="index.html#servicios">Servicios</a></li>
+    <li><a href="index.html#nosotros">Nosotros</a></li>
+    <li><a href="index.html#contacto">Contacto</a></li>
+  </ul>
+</nav>
+<header>
+  <div class="intro-text">
+  <p>
+    Nuestros visillos aportan luz natural, elegancia y privacidad,
+    confeccionados a medida para adaptarse a cada espacio.
+  </p>
+</div>
+
+  <h1>Visiilos</h1>
+  <p>Elegancia y personalización</p>
+</header>
+
+<div class="container">
+  <div class="gallery">
+    <img src="fotos de cortinas/foto3.jpg">
+    <img src="fotos de cortinas/foto3.jpg">
+    <img src="fotos de cortinas/foto3.jpg">
+    <img src="fotos de cortinas/foto3.jpg">
+    <img src="fotos de cortinas/foto3.jpg">
+    <img src="fotos de cortinas/foto3.jpg">
+    <img src="fotos de cortinas/foto3.jpg">
+    <img src="fotos de cortinas/foto3.jpg">
+  </div>
+
+  <a href="index.html" class="back">← Volver al inicio</a>
+</div>
+
+</body>
+</html>
