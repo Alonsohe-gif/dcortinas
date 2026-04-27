@@ -176,7 +176,6 @@
       margin:auto;
     }
 
-    /* Intercalado de colores */
     .servicios-section{ background:var(--beige); }
     .final-cta{ background:var(--crema); border-top:1px solid #e8dbc8; border-bottom:1px solid #e8dbc8; }
     .nosotros-section{ background:var(--white); }
@@ -373,6 +372,27 @@
       height:auto;
     }
 
+    .reviews-link{
+      text-align:center;
+      margin-top:30px;
+    }
+
+    .reviews-link a{
+      display:inline-block;
+      background:#fff;
+      color:var(--primary);
+      text-decoration:none;
+      padding:12px 22px;
+      border-radius:30px;
+      font-weight:600;
+      transition:.3s;
+    }
+
+    .reviews-link a:hover{
+      background:var(--secondary);
+      color:#fff;
+    }
+
     .contact{
       background:var(--crema);
       border-radius:10px;
@@ -481,7 +501,6 @@
       <ul class="menu" id="menu">
         <li><a href="#servicios">Servicios</a></li>
         <li><a href="#nosotros">Sobre Nosotros</a></li>
-        <li><a href="#proveedores">Proveedores</a></li>
         <li><a href="#galeria">Galería</a></li>
         <li><a href="#reseñas">Reseñas</a></li>
         <li><a href="#contacto">Contacto</a></li>
@@ -494,6 +513,11 @@
     <h1>Decortinas</h1>
     <p>Cortinas y decoración elegante para transformar tu hogar</p>
     <a href="#contacto" class="hero-btn">Solicita tu cotización</a>
+
+    <div class="hero-points">
+      <span>Atención personalizada</span>
+      <span>Montaje profesional</span>
+      <span>Calidad garantizada</span>
     </div>
   </header>
 
@@ -511,20 +535,15 @@
         </a>
 
         <a href="estores.html" class="producto-card">
-          <img src="fotos de cortinas/foto12.jpeg" alt="Estores">
+          <img src="fotos de cortinas/visillos 5.png" alt="Estores">
           <span>Estores</span>
         </a>
 
-        <a href="persianas.html" class="producto-card">
-          <img src="fotos de cortinas/foto1.jpg" alt="Persianas">
-          <span>Persianas</span>
-        </a>
-
         <a href="visillos.html" class="producto-card">
-          <img src="fotos de cortinas/foto1.jpg" alt="Visillos">
+          <img src="fotos de cortinas/visillos11.png" alt="Visillos">
           <span>Visillos</span>
         </a>
-        
+
         <a href="cama.html" class="producto-card">
           <img src="fotos de cortinas/ropadecama1.png" alt="Ropa de cama">
           <span>Ropa de cama</span>
@@ -564,27 +583,6 @@
     </div>
   </section>
 
-  <section id="proveedores" class="proveedores-section">
-    <div class="container">
-      <div class="section-title">
-        <h2>Cortinas de diseño en Madrid</h2>
-      </div>
-
-      <p class="texto-bloque">
-        En Decortinas te ofrecemos un amplio catálogo de tejidos para la confección de tus cortinas a medida,
-        colaborando con proveedores de alta calidad en el ámbito nacional e internacional.
-      </p>
-
-      <div class="logos-grid">
-        <div class="logo-box">BON DRAP</div>
-        <div class="logo-box">AQUA CLEAN</div>
-        <div class="logo-box">AZNAR TEXTIL</div>
-        <div class="logo-box">DESTINY DECOR</div>
-        <div class="logo-box">GONZALO FERRI</div>
-        <div class="logo-box">VÍA ROMA 60</div>
-        <div class="logo-box">FROCA</div>
-      </div>
-
       <p class="texto-bloque">
         Queremos que nuestros clientes tengan información clara sobre productos, tejidos y acabados.
         Descubre opciones como estores, paneles japoneses, lamas verticales y cortinas decorativas.
@@ -618,7 +616,7 @@
       </div>
 
       <div class="rating-summary">
-        <div class="rating-number">4.6</div>
+        <div class="rating-number">4.5</div>
         <div class="rating-stars">★★★★★</div>
         <div>Basado en 61 reseñas</div>
       </div>
@@ -646,6 +644,10 @@
           <p>Gran variedad de productos, calidad-precio muy buena y servicio profesional en todo momento.</p>
         </div>
       </div>
+
+      <div class="reviews-link">
+        <a href="https://www.google.es/maps/place/Decortinas+Decoraci%C3%B3n/@40.3145484,-3.8587294,17z/data=!4m16!1m9!3m8!1s0xd418c306bea0f61:0xcdd4f505c7486be7!2sDecortinas+Decoraci%C3%B3n!8m2!3d40.3145484!4d-3.8561545!9m1!1b1!16s%2Fg%2F1v42h2t0!3m5!1s0xd418c306bea0f61:0xcdd4f505c7486be7!8m2!3d40.3145484!4d-3.8561545!16s%2Fg%2F1v42h2t0?hl=es&entry=ttu&g_ep=EgoyMDI2MDQyMi4wIKXMDSoASAFQAw%3D%3D" target="_blank">Ver todas las reseñas en Google</a>
+      </div>
     </div>
   </section>
 
@@ -657,8 +659,8 @@
       </div>
 
       <div class="contact">
-        <p>📞 Móvil: <a href="tel:+34 4">+34 </a></p>
-        <p>✉ Correo: <a href="mailto:deprueba@hotmail.com">deprueba@hotmail.com</a></p>
+        <p>📞 Móvil: <a href="tel:+34 679 19 51 44">+34 679 19 51 44</a></p>
+        <p>✉ Correo: <a href="mailto:decortinas07@hotmail.com">decortinas07@hotmail.com</a></p>
 
         <div class="social-row">
           <a href="https://www.facebook.com/profile.php?id=100063545921267" target="_blank">
@@ -683,7 +685,7 @@
 
       <div class="mapa-container">
         <iframe
-          src="https://www.google.com/maps?q=M%C3%B3stoles&output=embed"
+          src="https://www.google.com/maps?q=40.3145484,-3.8561545&z=17&output=embed"
           loading="lazy">
         </iframe>
       </div>

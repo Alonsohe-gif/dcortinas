@@ -1,246 +1,653 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estores | Decortinas</title>
 
-<title>Cortinas a Medida | Decortinas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --primary:#3A2A22;
+      --secondary:#C89A3D;
+      --crema:#F6F1EA;
+      --beige:#EFE4D6;
+      --suave:#FAF8F4;
+      --text:#1F1B18;
+      --white:#ffffff;
+    }
 
-<style>
-:root {
-  --primary:#3a2a22;
-  --secondary:#d9a441;
-}
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
 
+    body{
+      font-family:'Montserrat',sans-serif;
+      background:var(--white);
+      color:var(--text);
+      line-height:1.6;
+      padding-top:92px;
+    }
 
-body {
-  font-family:'Poppins',sans-serif;
-  margin:0;
-}
+    h1,h2,h3{
+      font-family:'Playfair Display',serif;
+    }
 
-header {
-  background:
-    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-    url("img/cortinas.jpg");
-  background-size:cover;
-  background-position: center;
-  background-attachment: fixed;
-  color:white;
-  text-align:center;
-  padding:120px 20px;
-}
-      
-header h1,
-header p {
-  animation: fadeUp 1.2s ease forwards;
-}
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+    }
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+    nav{
+      position:fixed;
+      top:0;
+      width:100%;
+      z-index:1000;
+      background:var(--primary);
+      box-shadow:0 2px 10px rgba(0,0,0,0.15);
+    }
 
+    .nav-content{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      padding:12px 0;
+    }
 
-.container {
-  max-width:1100px;
-  margin:auto;
-  padding:80px 20px;
-}
+    .logo img{
+      height:60px;
+      display:block;
+    }
 
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-  gap: 50px;
-}
+    .menu{
+      list-style:none;
+      display:flex;
+      gap:22px;
+    }
 
-.gallery img {
-  width: 100%;
-  height: auto;               /* 👈 importante */
-  object-fit: contain;        /* 👈 muestra toda la imagen */
-  background: white;
-  padding: 20px;
-  border-radius: 18px;
-  box-shadow: 0 12px 35px rgba(0,0,0,0.08);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
+    .menu a{
+      color:white;
+      text-decoration:none;
+      font-weight:500;
+      font-size:0.95rem;
+    }
 
-.gallery img:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 18px 45px rgba(0,0,0,0.12);
-}
+    .menu a:hover{
+      color:var(--secondary);
+    }
 
-.gallery-section {
-  background-color: #f7f3ee; /* crema elegante */
-}
+    .menu-toggle{
+      display:none;
+      border:none;
+      background:none;
+      color:white;
+      font-size:1.6rem;
+      cursor:pointer;
+    }
 
+    header{
+      background:
+        linear-gradient(rgba(26,18,12,0.45), rgba(26,18,12,0.45)),
+        url("fotos de cortinas/foto12.jpeg");
+      background-size:cover;
+      background-position:center;
+      color:white;
+      text-align:center;
+      padding:120px 20px 95px;
+    }
 
-.back {
-  display:inline-block;
-  margin-top:50px;
-  background:var(--secondary);
-  color:white;
-  padding:12px 24px;
-  text-decoration:none;
-  border-radius:6px;
-}
+    header h1{
+      font-size:3rem;
+      margin-bottom:10px;
+    }
 
-.intro {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto 60px;
-}
+    header p{
+      max-width:650px;
+      margin:auto;
+      font-size:1.08rem;
+    }
 
-.intro h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-  color: var(--primary);
-}
+    .hero-btn{
+      display:inline-block;
+      margin-top:24px;
+      background:var(--secondary);
+      color:white;
+      text-decoration:none;
+      padding:11px 24px;
+      border-radius:30px;
+      font-weight:600;
+    }
 
-.intro p {
-  font-size: 1.05rem;
-  opacity: 0.85;
-}
+    .hero-btn:hover{
+      background:#b88935;
+    }
 
-.benefits {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  margin-top: 80px;
-}
+    section{
+      padding:75px 0;
+    }
 
-.benefits div {
-  background: #f6f7f8;
-  padding: 30px;
-  border-radius: 10px;
-}
+    .section-title{
+      text-align:center;
+      margin-bottom:34px;
+    }
 
-.benefits strong {
-  display: block;
-  margin-bottom: 8px;
-  color: var(--primary);
-}
-/* SECCIÓN GALERÍA (debajo de la portada) */
-.gallery-section {
-  background-color: #f3f6f5;
-  padding: 80px 20px;
-  border-top: 1px solid rgba(0,0,0,0.08);
-}
+    .section-title h2{
+      font-size:2rem;
+      color:var(--primary);
+      margin-bottom:8px;
+    }
 
-html {
-  scroll-behavior: smooth;
-}
+    .section-title p{
+      max-width:720px;
+      margin:auto;
+      color:#5c5550;
+    }
 
-nav {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-  background-color: #3a2a22;
-  padding: 15px 40px;
-  display: flex;
-  align-items: center;
-}
+    .intro-section{
+      background:var(--crema);
+    }
 
+    .intro-box{
+      max-width:850px;
+      margin:auto;
+      text-align:center;
+    }
 
-.logo img {
-  height: 65px;
-}
+    .intro-box p{
+      font-size:1.05rem;
+      color:#4f4843;
+    }
 
-.menu {
-  list-style: none;
-  display: flex;
-  gap: 35px;
-  margin: 0 auto; /* 👈 esto centra el menú */
-}
+    .ideas-section{
+      background:white;
+    }
 
-.menu a {
-  text-decoration: none;
-  color: white;
-  font-weight: 500;
-  transition: 0.3s ease;
-}
+    .ideas-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+    }
 
-.menu a:hover {
-  color: #d9a441; /* dorado */
-}
+    .idea{
+      background:var(--suave);
+      border:1px solid #ece1d3;
+      border-radius:14px;
+      padding:22px;
+      text-align:center;
+    }
 
-body {
-  padding-top: 100px; /* espacio para nav fijo */
-}
+    .idea h3{
+      color:var(--primary);
+      margin-bottom:8px;
+      font-size:1.15rem;
+    }
 
-</style>
+    .idea p{
+      color:#5a534d;
+      font-size:0.95rem;
+    }
+
+    .destacado-section{
+      background:var(--beige);
+    }
+
+    .destacado{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+      align-items:center;
+    }
+
+    .destacado-texto{
+      padding:10px;
+    }
+
+    .destacado-texto h2{
+      color:var(--primary);
+      margin-bottom:12px;
+      font-size:2rem;
+    }
+
+    .destacado-texto p{
+      color:#544d47;
+      margin-bottom:12px;
+    }
+
+    .destacado-img{
+      border-radius:16px;
+      overflow:hidden;
+      box-shadow:0 8px 18px rgba(0,0,0,0.12);
+    }
+
+    .destacado-img img{
+      width:100%;
+      height:420px;
+      object-fit:cover;
+      display:block;
+      cursor:zoom-in;
+    }
+
+    .galeria-section{
+      background:var(--white);
+    }
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:18px;
+    }
+
+    .gallery-item{
+      background:var(--white);
+      border-radius:16px;
+      overflow:hidden;
+      box-shadow:0 8px 18px rgba(0,0,0,0.10);
+      border:1px solid #eee3d5;
+    }
+
+    .gallery-item img{
+      width:100%;
+      height:260px;
+      object-fit:cover;
+      display:block;
+      cursor:zoom-in;
+      transition:transform 0.35s ease;
+    }
+
+    .gallery-item:hover img{
+      transform:scale(1.04);
+    }
+
+    .gallery-info{
+      padding:14px;
+    }
+
+    .gallery-info h3{
+      color:var(--primary);
+      margin-bottom:6px;
+      font-size:1.08rem;
+    }
+
+    .gallery-info p{
+      color:#5a534d;
+      font-size:0.93rem;
+    }
+
+    .franja-section{
+      background:var(--primary);
+      color:white;
+    }
+
+    .franja-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+      text-align:center;
+    }
+
+    .franja-item{
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.15);
+      border-radius:12px;
+      padding:18px 12px;
+    }
+
+    .franja-item h3{
+      margin-bottom:6px;
+      font-size:1.05rem;
+    }
+
+    .cta-section{
+      background:var(--crema);
+      text-align:center;
+    }
+
+    .cta-section h2{
+      color:var(--primary);
+      margin-bottom:10px;
+    }
+
+    .cta-section p{
+      max-width:720px;
+      margin:0 auto 18px;
+      color:#5a534d;
+    }
+
+    .back{
+      display:inline-block;
+      margin-top:12px;
+      background:var(--primary);
+      color:white;
+      text-decoration:none;
+      padding:10px 18px;
+      border-radius:8px;
+      font-weight:600;
+    }
+
+    .back:hover{
+      background:#2c1f19;
+    }
+
+    footer{
+      background:var(--primary);
+      color:white;
+      text-align:center;
+      padding:20px 12px;
+      font-size:0.92rem;
+    }
+
+    .lightbox{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.88);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      z-index:3000;
+      padding:20px;
+    }
+
+    .lightbox.open{
+      display:flex;
+    }
+
+    .lightbox img{
+      max-width:95%;
+      max-height:90vh;
+      border-radius:10px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.35);
+      background:white;
+    }
+
+    .lightbox-close{
+      position:absolute;
+      top:18px;
+      right:22px;
+      color:white;
+      font-size:2rem;
+      cursor:pointer;
+      font-weight:700;
+    }
+
+    @media (max-width:950px){
+      .ideas-grid{
+        grid-template-columns:1fr;
+      }
+
+      .destacado{
+        grid-template-columns:1fr;
+      }
+
+      .franja-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+    }
+
+    @media (max-width:760px){
+      .menu-toggle{
+        display:block;
+      }
+
+      .menu{
+        display:none;
+        position:absolute;
+        right:5%;
+        top:82px;
+        width:220px;
+        flex-direction:column;
+        background:var(--primary);
+        padding:14px;
+        border-radius:10px;
+      }
+
+      .menu.open{
+        display:flex;
+      }
+
+      .nav-content{
+        position:relative;
+      }
+
+      header h1{
+        font-size:2.2rem;
+      }
+
+      .franja-grid{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
 </head>
-
 <body>
-  
-<nav>
-  <div class="logo">
-    <img src="img/logoree.png" alt="Decortinas">
-  </div>
 
-  <ul class="menu">
-    <li><a href="index.html">Inicio</a></li>
-    <li><a href="index.html#productos">Productos</a></li>
-    <li><a href="index.html#servicios">Servicios</a></li>
-    <li><a href="index.html#nosotros">Nosotros</a></li>
-    <li><a href="index.html#contacto">Contacto</a></li>
-  </ul>
-</nav>
+  <nav>
+    <div class="container nav-content">
+      <a class="logo" href="index.html">
+        <img src="img/logoree.png" alt="Decortinas">
+      </a>
 
-<header>
-  <h1>Cortinas a Medida</h1>
-  <p>Elegancia y personalización</p>
-</header>
+      <button class="menu-toggle" id="menuToggle">☰</button>
 
-<div class="container">
-  <div class="intro">
-  <h2>Diseños que transforman espacios</h2>
-  <p>
-    Cada cortina es confeccionada a medida, cuidando los detalles, los tejidos
-    y la armonía con tu hogar. Descubre algunos de nuestros trabajos realizados.
-  </p>
-</div>
-
-<section class="gallery-section">
-  <div class="container">
-    <div class="gallery">
-      <img src="fotos de cortinas/foto14.jpeg">
-    <img src="fotos de cortinas/foto3.jpg">
-    <img src="fotos de cortinas/foto10.jpeg">
-    <img src="fotos de cortinas/foto11.jpeg">
-    <img src="fotos de cortinas/foto9.jpeg">
-    <img src="fotos de cortinas/foto5.jpeg">
-    <img src="fotos de cortinas/foto13.jpeg">
-    <img src="fotos de cortinas/foto15.jpeg">
+      <ul class="menu" id="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="index.html#servicios">Servicios</a></li>
+        <li><a href="index.html#nosotros">Nosotros</a></li>
+        <li><a href="index.html#contacto">Contacto</a></li>
+      </ul>
     </div>
-  </div>
-</div>
-  <div class="benefits">
-  <div>
-    <strong>✔ Confección a medida</strong>
-    <p>Cada proyecto se adapta al espacio y estilo del cliente.</p>
-  </div>
-  <div>
-    <strong>✔ Materiales seleccionados</strong>
-    <p>Trabajamos con tejidos duraderos y de alta calidad.</p>
-  </div>
-  <div>
-    <strong>✔ Asesoramiento personalizado</strong>
-    <p>Te acompañamos en todo el proceso de elección.</p>
-  </div>
-</div>
+  </nav>
 
+  <header>
+    <h1>Estores</h1>
+    <p>Soluciones modernas para regular la luz y vestir tus ventanas con un estilo limpio y actual.</p>
+    <a href="#galeria" class="hero-btn">Ver colección</a>
+  </header>
 
-  <a href="index.html" class="back">← Volver al inicio</a>
-</div>
+  <section class="intro-section">
+    <div class="container">
+      <div class="intro-box">
+        <div class="section-title">
+          <h2>Diseño práctico y elegante</h2>
+          <p>Los estores son una opción muy versátil para hogares que buscan comodidad, funcionalidad y una estética más ligera.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ideas-section">
+    <div class="container">
+      <div class="ideas-grid">
+        <div class="idea">
+          <h3>Luz controlada</h3>
+          <p>Permiten regular la entrada de luz de una forma sencilla y cómoda.</p>
+        </div>
+        <div class="idea">
+          <h3>Estilo actual</h3>
+          <p>Encajan muy bien en ambientes modernos y espacios más despejados.</p>
+        </div>
+        <div class="idea">
+          <h3>Fácil combinación</h3>
+          <p>Se adaptan bien a salones, dormitorios, cocinas y oficinas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="destacado-section">
+    <div class="container">
+      <div class="destacado">
+        <div class="destacado-texto">
+          <h2>Estores que se adaptan a tu espacio</h2>
+          <p>Son ideales para quienes quieren una ventana bien vestida sin recargar demasiado el ambiente.</p>
+          <p>Su diseño aporta orden visual, permite aprovechar la luz natural y ofrece un acabado muy limpio.</p>
+          <a href="index.html#contacto" class="hero-btn">Solicitar información</a>
+        </div>
+
+        <div class="destacado-img">
+          <img src="fotos de cortinas/foto6.jpeg" alt="Estor destacado">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="galeria" class="galeria-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Trabajos realizados</h2>
+        <p>Haz clic en las imágenes para verlas más grandes.</p>
+      </div>
+
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="fotos de cortinas/visillos 3.png" alt="Estor 1">
+          <div class="gallery-info">
+            <h3>Acabado elegante</h3>
+            <p>Una opción ideal para ambientes luminosos y equilibrados.</p>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="fotos de cortinas/visillos 4.png" alt="Estor 2">
+          <div class="gallery-info">
+            <h3>Espacios modernos</h3>
+            <p>Perfectos para mantener una estética limpia y actual.</p>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="fotos de cortinas/visillos 5.png" alt="Estor 3">
+          <div class="gallery-info">
+            <h3>Control de luz</h3>
+            <p>Una solución funcional para ajustar la claridad de la estancia.</p>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="fotos de cortinas/visillos 6.png" alt="Estor 4">
+          <div class="gallery-info">
+            <h3>Diseño ligero</h3>
+            <p>Dan sensación de orden y ayudan a aprovechar mejor el espacio.</p>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="fotos de cortinas/foto8.jpeg" alt="Estor 5">
+          <div class="gallery-info">
+            <h3>Decoración práctica</h3>
+            <p>Combinan utilidad y diseño en una sola pieza.</p>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="fotos de cortinas/foto7.jpeg" alt="Estor 6">
+          <div class="gallery-info">
+            <h3>Ambientes suaves</h3>
+            <p>Aportan un estilo discreto y muy fácil de integrar.</p>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="fotos de cortinas/foto12.jpeg" alt="Estor 7">
+          <div class="gallery-info">
+            <h3>Detalles decorativos</h3>
+            <p>Un toque final que mejora la imagen general del espacio.</p>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="fotos de cortinas/foto15.jpeg" alt="Estor 8">
+          <div class="gallery-info">
+            <h3>Composición final</h3>
+            <p>Resultados pensados para unir comodidad, luz y estilo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="franja-section">
+    <div class="container">
+      <div class="franja-grid">
+        <div class="franja-item">
+          <h3>Modernos</h3>
+          <p>Diseño limpio y actual.</p>
+        </div>
+        <div class="franja-item">
+          <h3>Versátiles</h3>
+          <p>Quedan bien en muchas estancias.</p>
+        </div>
+        <div class="franja-item">
+          <h3>Prácticos</h3>
+          <p>Fáciles de usar cada día.</p>
+        </div>
+        <div class="franja-item">
+          <h3>Personalizados</h3>
+          <p>Adaptados a cada espacio.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>¿Quieres instalar estores en tu hogar?</h2>
+      <p>Te ayudamos a elegir el modelo que mejor encaje con la luz, el tamaño y el estilo de tu espacio.</p>
+      <a href="index.html#contacto" class="hero-btn">Pedir asesoría</a>
+      <br>
+      <a href="index.html" class="back">← Volver al inicio</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Decortinas. Todos los derechos reservados.
+  </footer>
+
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" id="lightboxClose">×</span>
+    <img src="" alt="Imagen ampliada" id="lightboxImg">
+  </div>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const menu = document.getElementById("menu");
+
+    menuToggle.addEventListener("click", function () {
+      menu.classList.toggle("open");
+      menuToggle.textContent = menu.classList.contains("open") ? "✕" : "☰";
+    });
+
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightboxImg");
+    const lightboxClose = document.getElementById("lightboxClose");
+
+    const imagenes = document.querySelectorAll(".gallery-item img, .destacado-img img");
+
+    imagenes.forEach(function(img){
+      img.addEventListener("click", function(){
+        lightboxImg.src = this.src;
+        lightbox.classList.add("open");
+      });
+    });
+
+    lightboxClose.addEventListener("click", function(){
+      lightbox.classList.remove("open");
+      lightboxImg.src = "";
+    });
+
+    lightbox.addEventListener("click", function(e){
+      if(e.target === lightbox){
+        lightbox.classList.remove("open");
+        lightboxImg.src = "";
+      }
+    });
+  </script>
 
 </body>
 </html>

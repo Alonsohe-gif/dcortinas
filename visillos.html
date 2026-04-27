@@ -1,272 +1,565 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visillos | Decortinas</title>
 
-<title>Cortinas a Medida | Decortinas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
-<style>
-:root {
-  --primary:#2f3e46;
-  --secondary:#84a98c;
-}
-
-body {
-  font-family:'Poppins',sans-serif;
-  margin:0;
-}
-
-header {
-  background:
-    linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
-    url("images/cortina1.jpg");
-  background-size:cover;
-  color:white;
-  text-align:center;
-  padding:120px 20px;
-}
-
-header h1,
-header p {
-  animation: fadeUp 1.2s ease forwards;
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.container {
-  max-width:1100px;
-  margin:auto;
-  padding:80px 20px;
-}
-
-.gallery {
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:30px;
-}
-
-.gallery img {
-  width:100%;
-  height:380px;
-  object-fit:cover;
-  border-radius:10px;
-}
-
-.gallery img {
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  cursor: pointer;
-}
-
-.gallery img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
-}
-
-
-.back {
-  display:inline-block;
-  margin-top:50px;
-  background:var(--secondary);
-  color:white;
-  padding:12px 24px;
-  text-decoration:none;
-  border-radius:6px;
-}
-
-#lightbox {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.85);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 999;
-}
-
-#lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 12px;
-}
-.intro-text {
-  max-width: 700px;
-  margin: -40px auto 60px;
-  text-align: center;
-  font-size: 1.05rem;
-  color: #555;
-}
-#lightbox {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.9);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 999;
-  animation: fadeIn 0.4s ease;
-}
-
-#lightbox img {
-  max-width: 88%;
-  max-height: 88%;
-  border-radius: 14px;
-  animation: zoomIn 0.4s ease;
-}
-
-#lightbox .close {
-  position: absolute;
-  top: 30px;
-  right: 40px;
-  font-size: 2.5rem;
-  color: white;
-  cursor: pointer;
-}
-
-@keyframes zoomIn {
-  from { transform: scale(0.85); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-
-html {
-  scroll-behavior: smooth;
-}
-
-nav {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-  background-color: #3a2a22;
-  padding: 15px 40px;
-  display: flex;
-  align-items: center;
-}
-
-
-.logo img {
-  height: 65px;
-}
-
-.menu {
-  list-style: none;
-  display: flex;
-  gap: 35px;
-  margin: 0 auto; /* 👈 esto centra el menú */
-}
-
-.menu a {
-  text-decoration: none;
-  color: white;
-  font-weight: 500;
-  transition: 0.3s ease;
-}
-
-.menu a:hover {
-  color: #d9a441; /* dorado */
-}
-
-body {
-  padding-top: 100px; /* espacio para nav fijo */
-}
-
-</style>
-</head>
-
-<div id="lightbox">
-  <img src="">
-</div>
-
-<script>
-  const images = document.querySelectorAll('.gallery img');
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = lightbox.querySelector('img');
-  const closeBtn = document.querySelector('.close');
-
-  images.forEach(img => {
-    img.addEventListener('click', () => {
-      lightbox.style.display = 'flex';
-      lightboxImg.src = img.src;
-    });
-  });
-
-  closeBtn.addEventListener('click', () => {
-    lightbox.style.display = 'none';
-  });
-
-  lightbox.addEventListener('click', e => {
-    if (e.target === lightbox) {
-      lightbox.style.display = 'none';
+  <style>
+    :root{
+      --primary:#3A2A22;
+      --secondary:#C89A3D;
+      --crema:#F6F1EA;
+      --beige:#EFE4D6;
+      --suave:#FAF7F2;
+      --text:#1F1B18;
+      --white:#ffffff;
     }
-  });
-</script>
 
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
 
-<div id="lightbox">
-  <span class="close">×</span>
-  <img src="">
-</div>
+    body{
+      font-family:'Montserrat',sans-serif;
+      background:var(--white);
+      color:var(--text);
+      line-height:1.6;
+      padding-top:92px;
+    }
 
+    h1,h2,h3{
+      font-family:'Playfair Display',serif;
+    }
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    nav{
+      position:fixed;
+      top:0;
+      width:100%;
+      z-index:1000;
+      background:var(--primary);
+      box-shadow:0 2px 10px rgba(0,0,0,0.15);
+    }
+
+    .nav-content{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      padding:12px 0;
+    }
+
+    .logo img{
+      height:60px;
+      display:block;
+    }
+
+    .menu{
+      list-style:none;
+      display:flex;
+      gap:22px;
+    }
+
+    .menu a{
+      color:white;
+      text-decoration:none;
+      font-weight:500;
+      font-size:0.95rem;
+    }
+
+    .menu a:hover{
+      color:var(--secondary);
+    }
+
+    .menu-toggle{
+      display:none;
+      border:none;
+      background:none;
+      color:white;
+      font-size:1.6rem;
+      cursor:pointer;
+    }
+
+    header{
+      background:
+        linear-gradient(rgba(26,18,12,0.35), rgba(26,18,12,0.35)),
+        url("fotos de cortinas/foto3.jpg");
+      background-size:cover;
+      background-position:center;
+      color:white;
+      text-align:center;
+      padding:120px 20px 95px;
+    }
+
+    header h1{
+      font-size:3rem;
+      margin-bottom:10px;
+    }
+
+    header p{
+      max-width:650px;
+      margin:auto;
+      font-size:1.08rem;
+    }
+
+    .hero-btn{
+      display:inline-block;
+      margin-top:24px;
+      background:var(--secondary);
+      color:white;
+      text-decoration:none;
+      padding:11px 24px;
+      border-radius:30px;
+      font-weight:600;
+    }
+
+    .hero-btn:hover{
+      background:#b88935;
+    }
+
+    section{
+      padding:75px 0;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:34px;
+    }
+
+    .section-title h2{
+      font-size:2rem;
+      color:var(--primary);
+      margin-bottom:8px;
+    }
+
+    .section-title p{
+      max-width:720px;
+      margin:auto;
+      color:#5d5550;
+    }
+
+    .intro-section{
+      background:var(--crema);
+    }
+
+    .intro-box{
+      max-width:900px;
+      margin:auto;
+      text-align:center;
+    }
+
+    .intro-box p{
+      font-size:1.05rem;
+      color:#4f4843;
+    }
+
+    .info-row{
+      margin-top:28px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:14px;
+    }
+
+    .info-card{
+      background:white;
+      border:1px solid #eadfce;
+      border-radius:10px;
+      padding:18px;
+    }
+
+    .info-card h3{
+      font-size:1.1rem;
+      color:var(--primary);
+      margin-bottom:6px;
+    }
+
+    .destacado-section{
+      background:white;
+    }
+
+    .destacado{
+      display:grid;
+      grid-template-columns:1.1fr 1fr;
+      gap:20px;
+      align-items:center;
+    }
+
+    .destacado-img{
+      border-radius:14px;
+      overflow:hidden;
+      box-shadow:0 8px 18px rgba(0,0,0,0.12);
+    }
+
+    .destacado-img img{
+      width:100%;
+      height:420px;
+      object-fit:cover;
+      display:block;
+      cursor:zoom-in;
+    }
+
+    .destacado-texto{
+      background:var(--beige);
+      padding:24px;
+      border-radius:14px;
+    }
+
+    .destacado-texto h2{
+      color:var(--primary);
+      margin-bottom:10px;
+      font-size:2rem;
+    }
+
+    .destacado-texto p{
+      color:#534d47;
+      margin-bottom:12px;
+    }
+
+    .galeria-section{
+      background:var(--suave);
+    }
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:14px;
+    }
+
+    .gallery-item{
+      position:relative;
+      border-radius:12px;
+      overflow:hidden;
+      box-shadow:0 6px 14px rgba(0,0,0,0.10);
+      background:white;
+    }
+
+    .gallery-item img{
+      width:100%;
+      height:250px;
+      object-fit:cover;
+      display:block;
+      transition:transform 0.35s ease;
+      cursor:zoom-in;
+    }
+
+    .gallery-item:hover img{
+      transform:scale(1.04);
+    }
+
+    .gallery-label{
+      position:absolute;
+      bottom:10px;
+      left:10px;
+      background:rgba(58,42,34,0.82);
+      color:white;
+      padding:6px 10px;
+      border-radius:20px;
+      font-size:0.82rem;
+    }
+
+    .frase-section{
+      background:var(--beige);
+      text-align:center;
+    }
+
+    .frase-box{
+      max-width:850px;
+      margin:auto;
+    }
+
+    .frase-box h2{
+      color:var(--primary);
+      margin-bottom:12px;
+    }
+
+    .frase-box p{
+      color:#5b544d;
+      margin-bottom:18px;
+    }
+
+    .back{
+      display:inline-block;
+      margin-top:10px;
+      background:var(--primary);
+      color:white;
+      text-decoration:none;
+      padding:10px 18px;
+      border-radius:8px;
+      font-weight:600;
+    }
+
+    .back:hover{
+      background:#2c1f19;
+    }
+
+    footer{
+      background:var(--primary);
+      color:white;
+      text-align:center;
+      padding:20px 12px;
+      font-size:0.92rem;
+    }
+
+    .lightbox{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.88);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      z-index:3000;
+      padding:20px;
+    }
+
+    .lightbox.open{
+      display:flex;
+    }
+
+    .lightbox img{
+      max-width:95%;
+      max-height:90vh;
+      border-radius:10px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.35);
+      background:white;
+    }
+
+    .lightbox-close{
+      position:absolute;
+      top:18px;
+      right:22px;
+      color:white;
+      font-size:2rem;
+      cursor:pointer;
+      font-weight:700;
+    }
+
+    @media (max-width:900px){
+      .destacado{
+        grid-template-columns:1fr;
+      }
+
+      .destacado-img img{
+        height:320px;
+      }
+    }
+
+    @media (max-width:760px){
+      .menu-toggle{
+        display:block;
+      }
+
+      .menu{
+        display:none;
+        position:absolute;
+        right:5%;
+        top:82px;
+        width:220px;
+        flex-direction:column;
+        background:var(--primary);
+        padding:14px;
+        border-radius:10px;
+      }
+
+      .menu.open{
+        display:flex;
+      }
+
+      .nav-content{
+        position:relative;
+      }
+
+      header h1{
+        font-size:2.2rem;
+      }
+    }
+  </style>
+</head>
 <body>
-<nav>
-  <div class="logo">
-    <img src="img/logoree.png" alt="Decortinas">
+
+  <nav>
+    <div class="container nav-content">
+      <a class="logo" href="index.html">
+        <img src="img/logoree.png" alt="Decortinas">
+      </a>
+
+      <button class="menu-toggle" id="menuToggle">☰</button>
+
+      <ul class="menu" id="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="index.html#servicios">Servicios</a></li>
+        <li><a href="index.html#nosotros">Nosotros</a></li>
+        <li><a href="index.html#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Visillos</h1>
+    <p>Ligereza, luz natural y elegancia para vestir tus espacios con suavidad.</p>
+    <a href="#galeria" class="hero-btn">Ver trabajos</a>
+  </header>
+
+  <section class="intro-section">
+    <div class="container">
+      <div class="intro-box">
+        <div class="section-title">
+          <h2>La luz como protagonista</h2>
+          <p>Los visillos aportan una sensación más ligera y acogedora, dejando pasar la luz sin perder armonía ni estilo.</p>
+        </div>
+
+        <div class="info-row">
+          <div class="info-card">
+            <h3>Más luminosidad</h3>
+            <p>Permiten aprovechar mejor la luz natural durante el día.</p>
+          </div>
+          <div class="info-card">
+            <h3>Toque elegante</h3>
+            <p>Su caída suave da un acabado fino y delicado a cualquier estancia.</p>
+          </div>
+          <div class="info-card">
+            <h3>Hechos a medida</h3>
+            <p>Se adaptan al tamaño y estilo de cada ventana.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="destacado-section">
+    <div class="container">
+      <div class="destacado">
+        <div class="destacado-img">
+          <img src="fotos de cortinas/foto3.jpg" alt="Visillo destacado">
+        </div>
+
+        <div class="destacado-texto">
+          <h2>Visillos que suavizan el ambiente</h2>
+          <p>Son perfectos para salones, dormitorios y espacios donde quieres mantener claridad y sensación de amplitud.</p>
+          <p>Su diseño aporta un acabado más ligero y combina muy bien con cortinas decorativas o con estilos más minimalistas.</p>
+          <a href="index.html#contacto" class="hero-btn">Pedir información</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="galeria" class="galeria-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Trabajos realizados</h2>
+        <p>Haz clic en las imágenes para verlas más grandes.</p>
+      </div>
+
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="fotos de cortinas/estores 1.png" alt="Visillo 1">
+          <span class="gallery-label">1</span>
+        </div>
+
+        <div class="gallery-item">
+          <img src="fotos de cortinas/estores 2.png" alt="Visillo 2">
+          <span class="gallery-label">2</span>
+        </div>
+
+        <div class="gallery-item">
+          <img src="fotos de cortinas/estores.png" alt="Visillo 3">
+          <span class="gallery-label">3</span>
+        </div>
+
+        <div class="gallery-item">
+          <img src="fotos de cortinas/visillos6.png" alt="Visillo 4">
+          <span class="gallery-label">4</span>
+        </div>
+
+        <div class="gallery-item">
+          <img src="fotos de cortinas/visillos 5.png" alt="Visillo 5">
+          <span class="gallery-label">5</span>
+        </div>
+
+        <div class="gallery-item">
+          <img src="fotos de cortinas/visillos7.png" alt="Visillo 6">
+          <span class="gallery-label">6</span>
+        </div>
+
+        <div class="gallery-item">
+          <img src="fotos de cortinas/visillos9.png" alt="Visillo 7">
+          <span class="gallery-label">7</span>
+        </div>
+
+        <div class="gallery-item">
+          <img src="fotos de cortinas/visillos10.png" alt="Visillo 8">
+          <span class="gallery-label">8</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="frase-section">
+    <div class="container">
+      <div class="frase-box">
+        <h2>¿Buscas un acabado ligero y elegante?</h2>
+        <p>Te ayudamos a elegir el visillo que mejor encaje con tu hogar y con la luz de cada estancia.</p>
+        <a href="index.html#contacto" class="hero-btn">Solicitar asesoría</a>
+        <br>
+        <a href="index.html" class="back">← Volver al inicio</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Decortinas. Todos los derechos reservados.
+  </footer>
+
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" id="lightboxClose">×</span>
+    <img src="" alt="Imagen ampliada" id="lightboxImg">
   </div>
 
-  <ul class="menu">
-    <li><a href="index.html">Inicio</a></li>
-    <li><a href="index.html#productos">Productos</a></li>
-    <li><a href="index.html#servicios">Servicios</a></li>
-    <li><a href="index.html#nosotros">Nosotros</a></li>
-    <li><a href="index.html#contacto">Contacto</a></li>
-  </ul>
-</nav>
-<header>
-  <div class="intro-text">
-  <p>
-    Nuestros visillos aportan luz natural, elegancia y privacidad,
-    confeccionados a medida para adaptarse a cada espacio.
-  </p>
-</div>
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const menu = document.getElementById("menu");
 
-  <h1>Visiilos</h1>
-  <p>Elegancia y personalización</p>
-</header>
+    menuToggle.addEventListener("click", function () {
+      menu.classList.toggle("open");
+      menuToggle.textContent = menu.classList.contains("open") ? "✕" : "☰";
+    });
 
-<div class="container">
-  <div class="gallery">
-    <img src="fotos de cortinas/foto3.jpg">
-    <img src="fotos de cortinas/foto3.jpg">
-    <img src="fotos de cortinas/foto3.jpg">
-    <img src="fotos de cortinas/foto3.jpg">
-    <img src="fotos de cortinas/foto3.jpg">
-    <img src="fotos de cortinas/foto3.jpg">
-    <img src="fotos de cortinas/foto3.jpg">
-    <img src="fotos de cortinas/foto3.jpg">
-  </div>
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightboxImg");
+    const lightboxClose = document.getElementById("lightboxClose");
 
-  <a href="index.html" class="back">← Volver al inicio</a>
-</div>
+    const imagenes = document.querySelectorAll(".gallery-item img, .destacado-img img");
+
+    imagenes.forEach(function(img){
+      img.addEventListener("click", function(){
+        lightboxImg.src = this.src;
+        lightbox.classList.add("open");
+      });
+    });
+
+    lightboxClose.addEventListener("click", function(){
+      lightbox.classList.remove("open");
+      lightboxImg.src = "";
+    });
+
+    lightbox.addEventListener("click", function(e){
+      if(e.target === lightbox){
+        lightbox.classList.remove("open");
+        lightboxImg.src = "";
+      }
+    });
+  </script>
 
 </body>
 </html>
